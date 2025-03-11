@@ -1,0 +1,54 @@
+{
+  "topProjects": [
+    {
+      "title": "Marketing App Suite",
+      "earnings": 449000,
+      "category": "Unknown"
+    },
+    {
+      "title": "Machine Learning expert",
+      "earnings": 257062.8,
+      "category": "AI & Data Science"
+    },
+    {
+      "title": "PowerBI Dashboards : Labor Management",
+      "earnings": 239400,
+      "category": "Data Analytics & BI"
+    },
+    {
+      "title": "Data Analyst for Plant Science Research Systems",
+      "earnings": 215514.99,
+      "category": "Unknown"
+    },
+    {
+      "title": "Cloud Platform",
+      "earnings": 210265,
+      "category": "Cloud Computing"
+    },
+    {
+      "title": "Project AR like Roomle",
+      "earnings": 194000.5,
+      "category": "Unknown"
+    },
+    {
+      "title": "Vue SPA development",
+      "earnings": 187907,
+      "category": "Web Development"
+    },
+    {
+      "title": "Senior NodeJS/NestJS/GraphQL Engineer - Calendar Application",
+      "earnings": 180460,
+      "category": "Unknown"
+    },
+    {
+      "title": "Automotive App Suite on Aure with Automated Testing and AI",
+      "earnings": 174400,
+      "category": "AI & Data Science"
+    },
+    {
+      "title": "Hardware design of a medical device based on NXP IMX8 MPU",
+      "earnings": 165000,
+      "category": "Unknown"
+    }
+  ]
+}

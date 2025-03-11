@@ -1,0 +1,68 @@
+{
+  "2015": {
+    "totalEarnings": 791654.6899999997,
+    "freelancerCount": 59,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "13417.88"
+  },
+  "2016": {
+    "totalEarnings": 1063522.4400000006,
+    "freelancerCount": 76,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "13993.72"
+  },
+  "2017": {
+    "totalEarnings": 1719116.6099999994,
+    "freelancerCount": 95,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "18095.96"
+  },
+  "2018": {
+    "totalEarnings": 2033965.1100000003,
+    "freelancerCount": 128,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "15890.35"
+  },
+  "2019": {
+    "totalEarnings": 2828370.360000002,
+    "freelancerCount": 150,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "18855.80"
+  },
+  "2020": {
+    "totalEarnings": 2853538.1699999976,
+    "freelancerCount": 217,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "13149.95"
+  },
+  "2021": {
+    "totalEarnings": 4248207.120000006,
+    "freelancerCount": 286,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "14853.87"
+  },
+  "2022": {
+    "totalEarnings": 4583475.589999999,
+    "freelancerCount": 360,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "12731.88"
+  },
+  "2023": {
+    "totalEarnings": 3228936.9400000004,
+    "freelancerCount": 452,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "7143.67"
+  },
+  "2024": {
+    "totalEarnings": 2331360.9399999985,
+    "freelancerCount": 598,
+    "inProgressEarnings": 0,
+    "averageEarningsPerFreelancer": "3898.60"
+  },
+  "2025": {
+    "totalEarnings": 78595.72,
+    "freelancerCount": 135,
+    "inProgressEarnings": 247221.1500000001,
+    "averageEarningsPerFreelancer": "582.19"
+  }
+}
