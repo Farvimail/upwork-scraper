@@ -1,81 +1,135 @@
 const fs = require('fs');
 
-// 📌 **مسیر فایل داده‌ها**
 const filePath = 'data/freelancer_profiles.json';
 const outputPath = 'data/new_freelancers.json';
 
-// 📌 **بررسی موجود بودن فایل**
 if (!fs.existsSync(filePath)) {
     console.error("❌ فایل freelancer_profiles.json پیدا نشد!");
     process.exit(1);
 }
 
-// 📌 **بارگذاری داده‌ها**
 const freelancers = JSON.parse(fs.readFileSync(filePath));
 console.log(`📌 تعداد کل فریلنسرها: ${freelancers.length}`);
 
-// 📌 **تاریخ امروز و ۶ ماه پیش**
 const today = new Date();
+const twoMonthsAgo = new Date();
 const sixMonthsAgo = new Date();
-sixMonthsAgo.setMonth(today.getMonth() - 6);
+const twelveMonthsAgo = new Date();
 
-// 📌 **تابع تبدیل تاریخ متنی به Date**
+twoMonthsAgo.setMonth(today.getMonth() - 2);
+sixMonthsAgo.setMonth(today.getMonth() - 6);
+twelveMonthsAgo.setMonth(today.getMonth() - 12);
+
 function parseDate(dateStr) {
     if (!dateStr) return null;
-    let match = dateStr.match(/\b([A-Za-z]+ \d{1,2}, \d{4})\b/);
-    return match ? new Date(match[1]) : null;
-}
-
-// 📌 **تابع تبدیل درآمد دارای K و M به عدد صحیح**
-function convertEarnings(earningStr) {
-    if (!earningStr) return 0;
-    earningStr = earningStr.toUpperCase().replace(/[^0-9KM.]/g, "");
-    if (earningStr.includes("M")) {
-        return parseFloat(earningStr.replace("M", "")) * 1000000;
-    } else if (earningStr.includes("K")) {
-        return parseFloat(earningStr.replace("K", "")) * 1000;
-    } else {
-        return parseFloat(earningStr) || 0;
+    if (!/\b([A-Za-z]+ \d{1,2}, \d{4})\b/.test(dateStr) && !dateStr.includes("Present")) {
+        return "INVALID"; 
     }
+
+    let parts = dateStr.split("-").map(part => part.trim());
+
+    if (parts.length === 2) {
+        if (parts[1].includes("Present")) {
+            let match = parts[0].match(/\b([A-Za-z]+ \d{1,2}, \d{4})\b/);
+            return match ? new Date(match[0]) : null;
+        }
+        let match = parts[1].match(/\b([A-Za-z]+ \d{1,2}, \d{4})\b/);
+        return match ? new Date(match[0]) : null;
+    }
+
+    let match = dateStr.match(/\b([A-Za-z]+ \d{1,2}, \d{4})\b/);
+    return match ? new Date(match[0]) : null;
 }
 
-// 📌 **فیلتر فریلنسرهای جدید (کمتر از ۶ ماه فعالیت)**
-const newFreelancers = freelancers.filter(freelancer => {
+function parseEarnings(earnings) {
+    if (!earnings) return 0;
+    let match = earnings.match(/\$([\d,]+)K?\+/);
+    if (!match) return 0;
+    let amount = parseFloat(match[1].replace(/,/g, ''));
+    return earnings.includes("K") ? amount * 1000 : amount;
+}
+
+function parseProjectPrice(price) {
+    if (!price || price === "N/A" || price.toLowerCase().includes("private")) {
+        return 0;
+    }
+    let match = price.match(/\$([\d,]+(\.\d+)?)/);
+    return match ? parseFloat(match[1].replace(/,/g, '')) : 0;
+}
+
+const categorizedFreelancers = {
+    "2_months": [],
+    "6_months": [],
+    "12_months": []
+};
+
+freelancers.forEach(freelancer => {
     let allJobDates = [];
+    let hasInvalidDate = false;
+    let hasOldProject = false;
+    let totalProjectEarnings = 0;
+    let allPrivateEarnings = true;
 
     [...(freelancer.completed_jobs || []), ...(freelancer.in_progress_jobs || [])].forEach(job => {
         let jobDate = parseDate(job.date);
-        if (jobDate) allJobDates.push(jobDate);
+        let projectPrice = parseProjectPrice(job.price);
+
+        if (jobDate === "INVALID") {
+            hasInvalidDate = true;
+            return;
+        }
+
+        if (jobDate) {
+            allJobDates.push(jobDate);
+            if (jobDate < twelveMonthsAgo) {
+                hasOldProject = true;
+            }
+        }
+
+        if (projectPrice > 0) {
+            allPrivateEarnings = false;
+        }
+
+        totalProjectEarnings += projectPrice;
     });
 
-    if (allJobDates.length === 0) return false;
+    if (hasInvalidDate || hasOldProject || allJobDates.length === 0) return;
 
-    let firstJobDate = new Date(Math.min(...allJobDates.map(d => d.getTime())));
-    return firstJobDate >= sixMonthsAgo;
+    // مقایسه درآمد پروژه‌ها با total_earnings فریلنسر
+    let estimatedTotalEarnings = parseEarnings(freelancer.total_earnings);
+    if (estimatedTotalEarnings > 0 && Math.abs(estimatedTotalEarnings - totalProjectEarnings) > 500) {
+        return; // اگر اختلاف زیاد بود، حذف شود
+    }
+
+    // اگر همه پروژه‌ها private earnings بودند، فریلنسر حذف شود
+    if (allPrivateEarnings) return;
+
+    let in2Months = allJobDates.every(date => date >= twoMonthsAgo);
+    let in6Months = allJobDates.every(date => date >= sixMonthsAgo);
+    let in12Months = allJobDates.every(date => date >= twelveMonthsAgo);
+
+    if (in2Months) {
+        categorizedFreelancers["2_months"].push(freelancer);
+    } else if (in6Months) {
+        categorizedFreelancers["6_months"].push(freelancer);
+    } else if (in12Months) {
+        categorizedFreelancers["12_months"].push(freelancer);
+    }
 });
 
-// 📌 **ایجاد بخش چکیده**
-const summary = newFreelancers.map(freelancer => {
-    let totalEarnings = convertEarnings(freelancer.total_earnings);
-    let totalProjects = (freelancer.completed_jobs ? freelancer.completed_jobs.length : 0) +
-                        (freelancer.in_progress_jobs ? freelancer.in_progress_jobs.length : 0);
+Object.keys(categorizedFreelancers).forEach(category => {
+    categorizedFreelancers[category].sort((a, b) => parseEarnings(b.total_earnings) - parseEarnings(a.total_earnings));
+});
 
-    return {
-        name: freelancer.name,
-        profile_url: freelancer.profile_url,
-        total_earnings: totalEarnings,
-        total_projects: totalProjects,
-        skills: freelancer.skills.length > 0 ? freelancer.skills : ["Unknown"]
-    };
-}).sort((a, b) => b.total_earnings - a.total_earnings); // **مرتب‌سازی بر اساس درآمد کل**
-
-// 📌 **ایجاد خروجی JSON**
 const finalOutput = {
-    summary: summary,
-    freelancers: newFreelancers
+    summary: {
+        "2_months": categorizedFreelancers["2_months"].length,
+        "6_months": categorizedFreelancers["6_months"].length,
+        "12_months": categorizedFreelancers["12_months"].length
+    },
+    freelancers: categorizedFreelancers
 };
 
-// 📌 **ذخیره خروجی در فایل `new_freelancers.json`**
 fs.writeFileSync(outputPath, JSON.stringify(finalOutput, null, 2));
 
-console.log(`✅ لیست فریلنسرهای جدید به همراه چکیده در فایل \`${outputPath}\` ذخیره شد! 🚀`);
+console.log(`✅ فریلنسرهای تازه‌وارد واقعی شناسایی شدند و در فایل \`${outputPath}\` ذخیره شدند! 🚀`);

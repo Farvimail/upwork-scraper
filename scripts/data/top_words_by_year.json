@@ -1,0 +1,986 @@
+{
+  "2015": [
+    {
+      "word": "website",
+      "count": 1095
+    },
+    {
+      "word": "wordpress",
+      "count": 765
+    },
+    {
+      "word": "web",
+      "count": 699
+    },
+    {
+      "word": "developer",
+      "count": 613
+    },
+    {
+      "word": "development",
+      "count": 570
+    },
+    {
+      "word": "site",
+      "count": 544
+    },
+    {
+      "word": "app",
+      "count": 530
+    },
+    {
+      "word": "php",
+      "count": 408
+    },
+    {
+      "word": "data",
+      "count": 375
+    },
+    {
+      "word": "needed",
+      "count": 339
+    },
+    {
+      "word": "design",
+      "count": 337
+    },
+    {
+      "word": "expert",
+      "count": 327
+    },
+    {
+      "word": "mobile",
+      "count": 254
+    },
+    {
+      "word": "page",
+      "count": 254
+    },
+    {
+      "word": "project",
+      "count": 234
+    },
+    {
+      "word": "magento",
+      "count": 227
+    },
+    {
+      "word": "need",
+      "count": 223
+    },
+    {
+      "word": "work",
+      "count": 217
+    },
+    {
+      "word": "scraping",
+      "count": 216
+    },
+    {
+      "word": "application",
+      "count": 213
+    }
+  ],
+  "2016": [
+    {
+      "word": "website",
+      "count": 1016
+    },
+    {
+      "word": "web",
+      "count": 751
+    },
+    {
+      "word": "developer",
+      "count": 705
+    },
+    {
+      "word": "data",
+      "count": 699
+    },
+    {
+      "word": "wordpress",
+      "count": 688
+    },
+    {
+      "word": "need",
+      "count": 558
+    },
+    {
+      "word": "app",
+      "count": 547
+    },
+    {
+      "word": "development",
+      "count": 542
+    },
+    {
+      "word": "site",
+      "count": 393
+    },
+    {
+      "word": "expert",
+      "count": 392
+    },
+    {
+      "word": "needed",
+      "count": 379
+    },
+    {
+      "word": "python",
+      "count": 363
+    },
+    {
+      "word": "scraping",
+      "count": 313
+    },
+    {
+      "word": "project",
+      "count": 302
+    },
+    {
+      "word": "php",
+      "count": 298
+    },
+    {
+      "word": "script",
+      "count": 279
+    },
+    {
+      "word": "api",
+      "count": 270
+    },
+    {
+      "word": "help",
+      "count": 263
+    },
+    {
+      "word": "mobile",
+      "count": 243
+    },
+    {
+      "word": "excel",
+      "count": 240
+    }
+  ],
+  "2017": [
+    {
+      "word": "website",
+      "count": 1306
+    },
+    {
+      "word": "developer",
+      "count": 1125
+    },
+    {
+      "word": "data",
+      "count": 973
+    },
+    {
+      "word": "need",
+      "count": 957
+    },
+    {
+      "word": "web",
+      "count": 935
+    },
+    {
+      "word": "wordpress",
+      "count": 837
+    },
+    {
+      "word": "app",
+      "count": 639
+    },
+    {
+      "word": "development",
+      "count": 637
+    },
+    {
+      "word": "expert",
+      "count": 515
+    },
+    {
+      "word": "needed",
+      "count": 492
+    },
+    {
+      "word": "site",
+      "count": 443
+    },
+    {
+      "word": "help",
+      "count": 423
+    },
+    {
+      "word": "scraping",
+      "count": 407
+    },
+    {
+      "word": "php",
+      "count": 386
+    },
+    {
+      "word": "python",
+      "count": 381
+    },
+    {
+      "word": "excel",
+      "count": 370
+    },
+    {
+      "word": "project",
+      "count": 366
+    },
+    {
+      "word": "i",
+      "count": 346
+    },
+    {
+      "word": "design",
+      "count": 319
+    },
+    {
+      "word": "script",
+      "count": 316
+    }
+  ],
+  "2018": [
+    {
+      "word": "website",
+      "count": 1538
+    },
+    {
+      "word": "developer",
+      "count": 1416
+    },
+    {
+      "word": "data",
+      "count": 1393
+    },
+    {
+      "word": "web",
+      "count": 1332
+    },
+    {
+      "word": "need",
+      "count": 997
+    },
+    {
+      "word": "needed",
+      "count": 941
+    },
+    {
+      "word": "wordpress",
+      "count": 928
+    },
+    {
+      "word": "development",
+      "count": 902
+    },
+    {
+      "word": "app",
+      "count": 887
+    },
+    {
+      "word": "python",
+      "count": 716
+    },
+    {
+      "word": "expert",
+      "count": 626
+    },
+    {
+      "word": "help",
+      "count": 570
+    },
+    {
+      "word": "scraping",
+      "count": 558
+    },
+    {
+      "word": "site",
+      "count": 557
+    },
+    {
+      "word": "create",
+      "count": 553
+    },
+    {
+      "word": "project",
+      "count": 544
+    },
+    {
+      "word": "2",
+      "count": 516
+    },
+    {
+      "word": "fix",
+      "count": 497
+    },
+    {
+      "word": "excel",
+      "count": 467
+    },
+    {
+      "word": "api",
+      "count": 433
+    }
+  ],
+  "2019": [
+    {
+      "word": "developer",
+      "count": 2066
+    },
+    {
+      "word": "data",
+      "count": 2012
+    },
+    {
+      "word": "website",
+      "count": 1804
+    },
+    {
+      "word": "needed",
+      "count": 1678
+    },
+    {
+      "word": "web",
+      "count": 1429
+    },
+    {
+      "word": "app",
+      "count": 1098
+    },
+    {
+      "word": "wordpress",
+      "count": 1058
+    },
+    {
+      "word": "development",
+      "count": 932
+    },
+    {
+      "word": "need",
+      "count": 887
+    },
+    {
+      "word": "python",
+      "count": 835
+    },
+    {
+      "word": "expert",
+      "count": 825
+    },
+    {
+      "word": "scraping",
+      "count": 654
+    },
+    {
+      "word": "project",
+      "count": 620
+    },
+    {
+      "word": "create",
+      "count": 618
+    },
+    {
+      "word": "site",
+      "count": 606
+    },
+    {
+      "word": "aws",
+      "count": 575
+    },
+    {
+      "word": "script",
+      "count": 561
+    },
+    {
+      "word": "google",
+      "count": 551
+    },
+    {
+      "word": "api",
+      "count": 536
+    },
+    {
+      "word": "excel",
+      "count": 524
+    }
+  ],
+  "2020": [
+    {
+      "word": "developer",
+      "count": 3117
+    },
+    {
+      "word": "data",
+      "count": 2641
+    },
+    {
+      "word": "website",
+      "count": 2193
+    },
+    {
+      "word": "needed",
+      "count": 2132
+    },
+    {
+      "word": "web",
+      "count": 1837
+    },
+    {
+      "word": "python",
+      "count": 1789
+    },
+    {
+      "word": "app",
+      "count": 1488
+    },
+    {
+      "word": "development",
+      "count": 1248
+    },
+    {
+      "word": "expert",
+      "count": 1246
+    },
+    {
+      "word": "wordpress",
+      "count": 1055
+    },
+    {
+      "word": "need",
+      "count": 1051
+    },
+    {
+      "word": "scraping",
+      "count": 967
+    },
+    {
+      "word": "project",
+      "count": 963
+    },
+    {
+      "word": "api",
+      "count": 850
+    },
+    {
+      "word": "google",
+      "count": 832
+    },
+    {
+      "word": "create",
+      "count": 798
+    },
+    {
+      "word": "script",
+      "count": 779
+    },
+    {
+      "word": "help",
+      "count": 770
+    },
+    {
+      "word": "excel",
+      "count": 684
+    },
+    {
+      "word": "site",
+      "count": 655
+    }
+  ],
+  "2021": [
+    {
+      "word": "developer",
+      "count": 4049
+    },
+    {
+      "word": "data",
+      "count": 3918
+    },
+    {
+      "word": "python",
+      "count": 2816
+    },
+    {
+      "word": "needed",
+      "count": 2633
+    },
+    {
+      "word": "website",
+      "count": 2545
+    },
+    {
+      "word": "web",
+      "count": 2313
+    },
+    {
+      "word": "expert",
+      "count": 1801
+    },
+    {
+      "word": "app",
+      "count": 1699
+    },
+    {
+      "word": "scraping",
+      "count": 1510
+    },
+    {
+      "word": "project",
+      "count": 1468
+    },
+    {
+      "word": "wordpress",
+      "count": 1269
+    },
+    {
+      "word": "need",
+      "count": 1264
+    },
+    {
+      "word": "development",
+      "count": 1258
+    },
+    {
+      "word": "google",
+      "count": 1206
+    },
+    {
+      "word": "help",
+      "count": 1163
+    },
+    {
+      "word": "script",
+      "count": 1134
+    },
+    {
+      "word": "api",
+      "count": 1108
+    },
+    {
+      "word": "create",
+      "count": 1070
+    },
+    {
+      "word": "excel",
+      "count": 1038
+    },
+    {
+      "word": "react",
+      "count": 943
+    }
+  ],
+  "2022": [
+    {
+      "word": "developer",
+      "count": 4191
+    },
+    {
+      "word": "data",
+      "count": 4042
+    },
+    {
+      "word": "python",
+      "count": 3239
+    },
+    {
+      "word": "website",
+      "count": 2520
+    },
+    {
+      "word": "web",
+      "count": 2499
+    },
+    {
+      "word": "needed",
+      "count": 2101
+    },
+    {
+      "word": "expert",
+      "count": 1993
+    },
+    {
+      "word": "app",
+      "count": 1879
+    },
+    {
+      "word": "project",
+      "count": 1672
+    },
+    {
+      "word": "scraping",
+      "count": 1653
+    },
+    {
+      "word": "development",
+      "count": 1479
+    },
+    {
+      "word": "need",
+      "count": 1301
+    },
+    {
+      "word": "api",
+      "count": 1275
+    },
+    {
+      "word": "react",
+      "count": 1266
+    },
+    {
+      "word": "script",
+      "count": 1196
+    },
+    {
+      "word": "google",
+      "count": 1154
+    },
+    {
+      "word": "excel",
+      "count": 1150
+    },
+    {
+      "word": "help",
+      "count": 1076
+    },
+    {
+      "word": "using",
+      "count": 1064
+    },
+    {
+      "word": "create",
+      "count": 1063
+    }
+  ],
+  "2023": [
+    {
+      "word": "data",
+      "count": 5097
+    },
+    {
+      "word": "developer",
+      "count": 4766
+    },
+    {
+      "word": "python",
+      "count": 4044
+    },
+    {
+      "word": "web",
+      "count": 3176
+    },
+    {
+      "word": "website",
+      "count": 3073
+    },
+    {
+      "word": "expert",
+      "count": 2610
+    },
+    {
+      "word": "app",
+      "count": 2478
+    },
+    {
+      "word": "needed",
+      "count": 2159
+    },
+    {
+      "word": "development",
+      "count": 1981
+    },
+    {
+      "word": "scraping",
+      "count": 1922
+    },
+    {
+      "word": "project",
+      "count": 1921
+    },
+    {
+      "word": "api",
+      "count": 1692
+    },
+    {
+      "word": "ai",
+      "count": 1628
+    },
+    {
+      "word": "google",
+      "count": 1595
+    },
+    {
+      "word": "excel",
+      "count": 1542
+    },
+    {
+      "word": "script",
+      "count": 1525
+    },
+    {
+      "word": "need",
+      "count": 1415
+    },
+    {
+      "word": "help",
+      "count": 1355
+    },
+    {
+      "word": "create",
+      "count": 1346
+    },
+    {
+      "word": "using",
+      "count": 1322
+    }
+  ],
+  "2024": [
+    {
+      "word": "developer",
+      "count": 6371
+    },
+    {
+      "word": "data",
+      "count": 5620
+    },
+    {
+      "word": "python",
+      "count": 4234
+    },
+    {
+      "word": "website",
+      "count": 3390
+    },
+    {
+      "word": "web",
+      "count": 3313
+    },
+    {
+      "word": "needed",
+      "count": 3250
+    },
+    {
+      "word": "development",
+      "count": 3158
+    },
+    {
+      "word": "ai",
+      "count": 3151
+    },
+    {
+      "word": "expert",
+      "count": 3131
+    },
+    {
+      "word": "app",
+      "count": 2904
+    },
+    {
+      "word": "project",
+      "count": 2404
+    },
+    {
+      "word": "consultation",
+      "count": 2355
+    },
+    {
+      "word": "n",
+      "count": 2325
+    },
+    {
+      "word": "scraping",
+      "count": 2292
+    },
+    {
+      "word": "minute",
+      "count": 2002
+    },
+    {
+      "word": "api",
+      "count": 1943
+    },
+    {
+      "word": "google",
+      "count": 1669
+    },
+    {
+      "word": "full",
+      "count": 1611
+    },
+    {
+      "word": "30",
+      "count": 1557
+    },
+    {
+      "word": "stack",
+      "count": 1557
+    }
+  ],
+  "2025": [
+    {
+      "word": "developer",
+      "count": 1450
+    },
+    {
+      "word": "data",
+      "count": 1161
+    },
+    {
+      "word": "needed",
+      "count": 1130
+    },
+    {
+      "word": "ai",
+      "count": 1102
+    },
+    {
+      "word": "development",
+      "count": 925
+    },
+    {
+      "word": "web",
+      "count": 667
+    },
+    {
+      "word": "python",
+      "count": 666
+    },
+    {
+      "word": "consultation",
+      "count": 639
+    },
+    {
+      "word": "expert",
+      "count": 610
+    },
+    {
+      "word": "app",
+      "count": 601
+    },
+    {
+      "word": "website",
+      "count": 594
+    },
+    {
+      "word": "minute",
+      "count": 584
+    },
+    {
+      "word": "n",
+      "count": 567
+    },
+    {
+      "word": "scraping",
+      "count": 491
+    },
+    {
+      "word": "30",
+      "count": 442
+    },
+    {
+      "word": "automation",
+      "count": 440
+    },
+    {
+      "word": "project",
+      "count": 421
+    },
+    {
+      "word": "integration",
+      "count": 391
+    },
+    {
+      "word": "api",
+      "count": 383
+    },
+    {
+      "word": "full",
+      "count": 369
+    }
+  ],
+  "Overall": [
+    {
+      "word": "developer",
+      "count": 31787
+    },
+    {
+      "word": "data",
+      "count": 28739
+    },
+    {
+      "word": "website",
+      "count": 23748
+    },
+    {
+      "word": "web",
+      "count": 20702
+    },
+    {
+      "word": "python",
+      "count": 19769
+    },
+    {
+      "word": "needed",
+      "count": 18135
+    },
+    {
+      "word": "app",
+      "count": 16135
+    },
+    {
+      "word": "expert",
+      "count": 14873
+    },
+    {
+      "word": "development",
+      "count": 14722
+    },
+    {
+      "word": "project",
+      "count": 11700
+    },
+    {
+      "word": "wordpress",
+      "count": 11430
+    },
+    {
+      "word": "scraping",
+      "count": 11284
+    },
+    {
+      "word": "need",
+      "count": 10384
+    },
+    {
+      "word": "api",
+      "count": 9519
+    },
+    {
+      "word": "google",
+      "count": 8617
+    },
+    {
+      "word": "script",
+      "count": 8326
+    },
+    {
+      "word": "excel",
+      "count": 8074
+    },
+    {
+      "word": "create",
+      "count": 7923
+    },
+    {
+      "word": "help",
+      "count": 7877
+    },
+    {
+      "word": "site",
+      "count": 7066
+    }
+  ]
+}

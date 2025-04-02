@@ -1,0 +1,15 @@
+2025/03/31-20:14:03.859 dc8 Reusing MANIFEST C:\Users\AC30\Desktop\upwork scraper\scripts\chrome-profile\Default\Local Storage\leveldb/MANIFEST-000001
+2025/03/31-20:14:03.868 dc8 Recovering log #14
+2025/03/31-20:14:03.870 dc8 Reusing old log C:\Users\AC30\Desktop\upwork scraper\scripts\chrome-profile\Default\Local Storage\leveldb/000014.log 
+2025/03/31-20:15:09.201 3ec4 Level-0 table #17: started
+2025/03/31-20:15:09.206 3ec4 Level-0 table #17: 13193 bytes OK
+2025/03/31-20:15:09.208 3ec4 Delete type=0 #14
+2025/03/31-20:15:09.209 dc8 Compacting 4@0 + 1@1 files
+2025/03/31-20:15:09.216 dc8 Generated table #18@0: 100 keys, 91236 bytes
+2025/03/31-20:15:09.216 dc8 Compacted 4@0 + 1@1 files => 91236 bytes
+2025/03/31-20:15:09.217 dc8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/03/31-20:15:09.218 dc8 Delete type=2 #7
+2025/03/31-20:15:09.219 dc8 Delete type=2 #9
+2025/03/31-20:15:09.219 dc8 Delete type=2 #11
+2025/03/31-20:15:09.219 dc8 Delete type=2 #14
+2025/03/31-20:15:09.219 dc8 Delete type=2 #17
