@@ -1,11 +1,13 @@
-// ✅ نسخه نهایی با قابلیت ادامه (resume)، stealth، اسکرول، حرکت موس و فرم جستجو
+// ✅ نسخه نهایی با ذخیره وضعیت در ابتدای حلقه برای auto-resume دقیق‌تر
 
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const statePath = path.join(__dirname, '../data/scraper_state.json');
-const outputPath = path.join(__dirname, '../data/uiux_profiles.json');
+const rootPath = path.resolve(__dirname, '..');
+const dataPath = path.join(rootPath, 'data');
+const statePath = path.join(dataPath, 'scraper_state.json');
+const outputPath = path.join(dataPath, 'uiux_profiles.json');
 
 const applyStealth = async (page) => {
   await page.evaluateOnNewDocument(() => {
@@ -13,8 +15,16 @@ const applyStealth = async (page) => {
   });
 };
 
+const safeMouseMove = async (page) => {
+  if (!page.isClosed()) {
+    await page.mouse.move(Math.random() * 800, Math.random() * 600);
+  } else {
+    console.warn("🚫 مرورگر بسته شده، حرکت موس انجام نشد.");
+  }
+};
+
 (async () => {
-  let startPage = 440;
+  let startPage = 1;
   let existingLinks = new Set();
 
   if (fs.existsSync(statePath)) {
@@ -56,7 +66,7 @@ const applyStealth = async (page) => {
   ];
   await page.setUserAgent(userAgents[Math.floor(Math.random() * userAgents.length)]);
 
-  await page.mouse.move(Math.random() * 800, Math.random() * 600);
+  await safeMouseMove(page);
   await new Promise(resolve => setTimeout(resolve, 2000));
 
   const searchUrl = `https://www.upwork.com/nx/search/talent/?nbs=1&q=react&page=${startPage}`;
@@ -64,14 +74,13 @@ const applyStealth = async (page) => {
   await page.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
   await new Promise(resolve => setTimeout(resolve, 4000));
 
-//   // 🧠 فرم جستجوی UI/UX
 //   const input = await page.$("#navSearchForm-desktop > div.nav-search-input-container > input.nav-search-autosuggest-input");
 //   if (input) {
 //     await input.click({ clickCount: 3 });
 //     await input.type("ui ux", { delay: 100 });
 //   }
 
-//   await page.mouse.move(Math.random() * 800, Math.random() * 600);
+//   await safeMouseMove(page);
 
 //   const dropdownButton = await page.$("#navSearchForm-desktop > div.nav-search-dropdown-container > button");
 //   if (dropdownButton) {
@@ -79,7 +88,7 @@ const applyStealth = async (page) => {
 //     await new Promise(resolve => setTimeout(resolve, 1000));
 //   }
 
-//   await page.mouse.move(Math.random() * 800, Math.random() * 600);
+//   await safeMouseMove(page);
 
 //   const firstOption = await page.$("#navSearchForm-desktop > div.nav-search-dropdown-container > ul > li:nth-child(2) > button");
 //   if (firstOption) {
@@ -87,14 +96,14 @@ const applyStealth = async (page) => {
 //     await new Promise(resolve => setTimeout(resolve, 1000));
 //   }
 
-//   await page.mouse.move(Math.random() * 800, Math.random() * 600);
+//   await safeMouseMove(page);
 
 //   const searchForm = await page.$("#navSearchForm-desktop");
 //   if (searchForm) {
 //     await searchForm.evaluate(form => form.submit());
 //   }
 
-//   await page.mouse.move(Math.random() * 800, Math.random() * 600);
+//   await safeMouseMove(page);
 //   await new Promise(resolve => setTimeout(resolve, 10000));
 
   console.log('✅ صفحه جستجو بارگذاری شد. منتظر بارگذاری نتایج...');
@@ -108,6 +117,14 @@ const applyStealth = async (page) => {
 
   for (let currentPage = startPage; currentPage <= totalPages; currentPage++) {
     console.log(`📄 پردازش صفحه ${currentPage}...`);
+
+    // 📝 ذخیره وضعیت از ابتدای حلقه
+    fs.writeFileSync(statePath, JSON.stringify({ last_success_page: currentPage }, null, 2));
+
+    if (page.isClosed()) {
+      console.warn("⛔ تب مرورگر بسته شد. توقف عملیات.");
+      break;
+    }
 
     let lastHeight = await page.evaluate(() => document.body.scrollHeight);
     while (true) {
@@ -139,9 +156,8 @@ const applyStealth = async (page) => {
     profileLinks.forEach(link => existingLinks.add(link));
     console.log(`✅ ${profileLinks.length} لینک در صفحه ${currentPage} ذخیره شد.`);
 
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.mkdirSync(dataPath, { recursive: true });
     fs.writeFileSync(outputPath, JSON.stringify([...existingLinks], null, 2));
-    fs.writeFileSync(statePath, JSON.stringify({ last_success_page: currentPage }, null, 2));
 
     if (currentPage === totalPages) break;
 
@@ -149,7 +165,13 @@ const applyStealth = async (page) => {
     const nextUrl = `https://www.upwork.com/nx/search/talent/?nbs=1&q=react&page=${currentPage + 1}`;
     await page.goto(nextUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
     await new Promise(resolve => setTimeout(resolve, 10000));
-    await page.mouse.move(Math.random() * 800, Math.random() * 600);
+
+    if (page.isClosed()) {
+      console.warn(`🚫 تب مرورگر بسته شده قبل از پردازش صفحه ${currentPage + 1}. توقف.`);
+      break;
+    }
+
+    await safeMouseMove(page);
   }
 
   console.log('🚀 عملیات تموم شد. مرورگر باز می‌مونه برای بررسی دستی.');
