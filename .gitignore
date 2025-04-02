@@ -1,11 +1,23 @@
-node_modules/
-.env
-*.log
+# Python
 __pycache__/
 *.pyc
+env/
+venv/
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Chrome cached profiles
+scripts/chrome-profile/
+
+# Build folders
 dist/
 build/
 
-
-# VSCode
+# VSCode settings
 .vscode/
+
+# Large local files
+scripts/data/*.json
+*.env
